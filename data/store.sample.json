@@ -1,0 +1,388 @@
+{
+  "sources": {
+    "all-in": {
+      "id": "all-in",
+      "name": "All-In Podcast",
+      "type": "podcast",
+      "rss_url": "https://allinchamathjason.libsyn.com/rss",
+      "language": "en",
+      "priority": 92,
+      "themes": [
+        "venture capital",
+        "startups",
+        "markets",
+        "AI",
+        "policy"
+      ],
+      "why": "硅谷投资人和创业者视角强，适合追踪市场情绪与热门公司。"
+    },
+    "acquired": {
+      "id": "acquired",
+      "name": "Acquired",
+      "type": "podcast",
+      "rss_url": "https://feeds.transistor.fm/acquired",
+      "language": "en",
+      "priority": 90,
+      "themes": [
+        "company history",
+        "strategy",
+        "technology",
+        "markets"
+      ],
+      "why": "长访谈和公司深度拆解质量高，适合沉淀长期认知。"
+    },
+    "dwarkesh": {
+      "id": "dwarkesh",
+      "name": "Dwarkesh Podcast",
+      "type": "podcast",
+      "rss_url": "https://api.substack.com/feed/podcast/69345.rss",
+      "language": "en",
+      "priority": 95,
+      "themes": [
+        "AI",
+        "research",
+        "scaling",
+        "economics",
+        "philosophy"
+      ],
+      "why": "AI 研究者、创业者、政策人物的一手长访谈，信息密度高。"
+    },
+    "no-priors": {
+      "id": "no-priors",
+      "name": "No Priors",
+      "type": "podcast",
+      "rss_url": "https://feeds.megaphone.fm/nopriors",
+      "language": "en",
+      "priority": 88,
+      "themes": [
+        "AI",
+        "startups",
+        "research",
+        "infrastructure"
+      ],
+      "why": "AI 创业和研究生态的一线访谈，适合跟踪新公司与新方向。"
+    },
+    "latent-space": {
+      "id": "latent-space",
+      "name": "Latent Space",
+      "type": "podcast",
+      "rss_url": "https://api.substack.com/feed/podcast/1084089.rss",
+      "language": "en",
+      "priority": 88,
+      "themes": [
+        "AI engineering",
+        "LLM",
+        "developer tools",
+        "agents"
+      ],
+      "why": "偏工程和开发者生态，能捕捉 AI 工具链的原始讨论。"
+    },
+    "a16z-podcast": {
+      "id": "a16z-podcast",
+      "name": "a16z Podcast",
+      "type": "podcast",
+      "rss_url": "https://feeds.simplecast.com/JGE3yC0V",
+      "language": "en",
+      "priority": 80,
+      "themes": [
+        "venture capital",
+        "technology",
+        "startups",
+        "policy"
+      ],
+      "why": "VC 平台型内容，覆盖新技术和创业趋势。"
+    },
+    "ycombinator": {
+      "id": "ycombinator",
+      "name": "Y Combinator",
+      "type": "podcast",
+      "rss_url": "https://feeds.simplecast.com/54nAGcIl",
+      "language": "en",
+      "priority": 78,
+      "themes": [
+        "startups",
+        "founders",
+        "YC",
+        "product"
+      ],
+      "why": "创业一线经验和 YC 生态内容，适合发现早期趋势。"
+    },
+    "lenny": {
+      "id": "lenny",
+      "name": "Lenny's Podcast",
+      "type": "podcast",
+      "rss_url": "https://api.substack.com/feed/podcast/10845.rss",
+      "language": "en",
+      "priority": 82,
+      "themes": [
+        "product",
+        "growth",
+        "startups",
+        "operators"
+      ],
+      "why": "产品、增长和创业操盘手访谈，适合提取实践经验。"
+    },
+    "invest-like-best": {
+      "id": "invest-like-best",
+      "name": "Invest Like the Best",
+      "type": "podcast",
+      "rss_url": "https://feeds.megaphone.fm/investlikethebest",
+      "language": "en",
+      "priority": 78,
+      "themes": [
+        "investing",
+        "business",
+        "founders",
+        "strategy"
+      ],
+      "why": "投资和企业家访谈质量稳定，可作为跨领域高质量来源。"
+    },
+    "the-generalist": {
+      "id": "the-generalist",
+      "name": "The Generalist",
+      "type": "newsletter",
+      "rss_url": "https://www.generalist.com/feed",
+      "language": "en",
+      "priority": 76,
+      "themes": [
+        "startups",
+        "strategy",
+        "markets",
+        "technology"
+      ],
+      "why": "发现型平台，常整理高质量公司和趋势研究，可反向发现采访对象。"
+    },
+    "stratechery": {
+      "id": "stratechery",
+      "name": "Stratechery",
+      "type": "analysis-feed",
+      "rss_url": "https://stratechery.com/feed/",
+      "language": "en",
+      "priority": 74,
+      "themes": [
+        "strategy",
+        "technology",
+        "platforms",
+        "business models"
+      ],
+      "why": "技术商业分析质量高，用于辅助筛选值得追踪的话题。"
+    },
+    "ycombinator-blog": {
+      "id": "ycombinator-blog",
+      "name": "Y Combinator Blog",
+      "type": "discovery-feed",
+      "rss_url": "https://www.ycombinator.com/blog/rss",
+      "language": "en",
+      "priority": 70,
+      "themes": [
+        "startups",
+        "YC",
+        "founders",
+        "AI"
+      ],
+      "why": "作为发现新公司、新创始人访谈和创业观点的补充来源。"
+    }
+  },
+  "episodes": {
+    "the-generalist-1ccc32d64654b89d": {
+      "id": "the-generalist-1ccc32d64654b89d",
+      "source_id": "the-generalist",
+      "guid": "https://www.generalist.com/p/generalist-intelligence-july-3",
+      "title": "Welcome to GLP-World",
+      "link": "https://www.generalist.com/p/generalist-intelligence-july-3",
+      "audio_url": null,
+      "published_at": "2026-07-03T17:35:32.000Z",
+      "description": "​Welcome to another edition of Generalist Intelligence, the weekly intelligence briefing that delivers situational awareness in 20 minutes or less. To unlock the full briefing, join as a member.This week, we distill the second and third-order effects of GLP-1s, a narrative violation in AI, and growi",
+      "status": "processed",
+      "quality_score": 94,
+      "score_reasons": [
+        "源优先级 76",
+        "命中高价值信号: with ",
+        "命中高价值信号: ai"
+      ],
+      "transcript": null,
+      "digest": {
+        "title_cn": "走进 GLP 时代",
+        "one_sentence": "这篇文章讲述了 Ozempic 类 GLP-1 药物的起源故事——一位内分泌学家如何从毒蜥的毒液中发现关键分子，以及这类药物可能带来的远超\"减肥\"本身的连锁反应。",
+        "original_context": "这是 The Generalist 的每周简报 Generalist Intelligence 中一篇文章的开篇内容，作者 Mario 试图梳理 GLP-1 类药物（如 Ozempic）的二阶、三阶效应，同时该期简报还涉及 AI 领域的一次\"叙事违反\"（narrative violation）以及围绕稀土矿产日益紧张的局势——但这两部分内容并未在可读部分展开，属于付费内容。\n\n文章的核心叙事聚焦在 GLP-1 药物意外且曲折的起源故事上：从沙漠毒蜥的生存之谜说起，串联到今天席卷全球的 Ozempic 现象，并延伸出对消费产业链（食品、服装等）连锁反应的观察。",
+        "key_points": [
+          "内分泌学家 John Eng 在 1990 年代初期，出于对 Gila monster（毒蜥，一种有毒的沙漠蜥蜴）一年只进食一两次这一现象的好奇，展开了一项小型研究。",
+          "Eng 从毒蜥的毒液中分离出一种新型多肽，它能像人体天然的 GLP-1 激素一样显著降低血糖，但作用持续时间是几个小时，而人体自身 GLP-1 激素的作用只有几分钟。",
+          "三十年后，基于这种毒蜥毒液发现分子而开发的合成版本，正是今天广为人知的 Ozempic。",
+          "文章作者判断 Ozempic 正在\"悄悄颠覆资本主义\"（\"quietly upending capitalism\"）。",
+          "除了直接的肥胖治疗效果，GLP-1 类药物对高热量、超加工食品（ultra-processed foods）生产商构成利空——研究显示这类食品是人们减少摄入时最先被舍弃的。",
+          "与之相对，服装定制/裁缝行业被认为是潜在受益方——因为身体变化带来更多衣物改动需求，以及体型自信提升后购买\"真正好的燕尾服\"的意愿增强。",
+          "文章强调 GLP-1 药物真正的作用机制可能远比单纯抑制\"食物噪音\"（food noise，即对食物持续的想法/渴望）更为强大和深远。",
+          "本期简报引用 Stephen Leacock（老师、幽默作家）在其著作 The Garden of Folly 中对广告的讽刺定义，作为开篇引语，与主文内容形成呼应式的基调设定。"
+        ],
+        "notable_quotes": [
+          "\"Advertising may be described as the science of arresting the human intelligence long enough to get money from it.\" — Stephen Leacock，讽刺广告业本质的名句，用作本期简报的开篇引语。",
+          "\"a synthetic version of the molecule Dr. Eng discovered in Gila monster venom is quietly upending capitalism\" — 作者对 Ozempic 影响力的核心判断。",
+          "\"research shows high-calorie, ultra-processed foods are first to go\" — 关于 GLP-1 药物对饮食结构影响的具体研究发现。",
+          "\"cutting out mere 'food noise' for those who want to snack less\" — 描述 GLP-1 药物被大众理解的常见机制（抑制食物噪音），但作者暗示实际影响更深远。"
+        ],
+        "people_and_orgs": [
+          "John Eng（内分泌学家，Gila monster 毒液研究者）",
+          "Mario（作者，The Generalist 简报撰写人）",
+          "Stephen Leacock（教师、幽默作家，The Garden of Folly 作者）",
+          "The Generalist（媒体/简报品牌）",
+          "Ozempic（药物，文中未直接提及生产厂商名）"
+        ],
+        "topics": [
+          "GLP-1 药物",
+          "Ozempic",
+          "肥胖治疗",
+          "消费行业二阶效应",
+          "超加工食品",
+          "The Generalist 简报",
+          "稀土矿产（仅提及标题，未展开）",
+          "AI 叙事违反（仅提及标题，未展开）"
+        ],
+        "why_it_matters": [
+          "对创业者和投资人而言，GLP-1 类药物的普及可能重塑整个消费品行业价值链——从食品到服装零售，值得提前评估相关公司的暴露风险与机会。",
+          "药物起源于对一个看似无关的生物学现象（毒蜥的低频进食习性）的好奇心驱动研究，提醒重大创新往往来自跨界的、非功利性的科学探索，而非直接的商业目标导向。",
+          "文章采用的\"二阶、三阶效应\"分析框架值得借鉴——不只看直接受益者（药企、减肥人群），更要追踪产业链上下游被重塑的公司和行为模式，这种思路同样适用于分析 AI 等其他颠覆性技术的外溢影响。"
+        ],
+        "follow_up_questions": [
+          "GLP-1 药物除了对食品和服装行业的影响外，文章付费部分具体还提到了哪些二阶、三阶效应？",
+          "本期简报中提到的 AI 领域\"narrative violation\"具体指什么事件或产品？",
+          "围绕稀土矿产的紧张局势具体涉及哪些国家、公司和政策动向？",
+          "GLP-1 药物对\"food noise\"的抑制机制，除了减少进食冲动外，是否已有研究显示其对其他成瘾行为（如购物、饮酒）也有类似的抑制作用？"
+        ]
+      },
+      "error": null,
+      "created_at": "2026-07-06T17:31:50.717Z",
+      "updated_at": "2026-07-07T00:01:47.663Z",
+      "kind": "article",
+      "provider": "anthropic",
+      "processed_at": "2026-07-06T23:59:57.496Z"
+    },
+    "the-generalist-1bcbe3f43ce0a92e": {
+      "id": "the-generalist-1bcbe3f43ce0a92e",
+      "source_id": "the-generalist",
+      "guid": "https://www.generalist.com/p/generalist-intelligence-june-26",
+      "title": "America Invents, China Applies",
+      "link": "https://www.generalist.com/p/generalist-intelligence-june-26",
+      "audio_url": null,
+      "published_at": "2026-06-26T15:08:14.000Z",
+      "description": "Friends,​This week, we look Eastward. While the West concerns itself with which model is the smartest, Beijing published a 17-point plan to shove AI into every shop, clinic, and classroom in the country. It is one America cannot afford to ignore. Read for our view on what Xi Jinping’s AI push means,",
+      "status": "processed",
+      "quality_score": 100,
+      "score_reasons": [
+        "源优先级 76",
+        "命中高价值信号: with ",
+        "命中高价值信号: cto",
+        "命中高价值信号: google",
+        "命中高价值信号: ai"
+      ],
+      "transcript": null,
+      "digest": {
+        "title_cn": "「美国发明，中国应用」：中国最新AI+消费17条新政解读",
+        "one_sentence": "当西方还在争论哪个模型最聪明时，北京已经发布了一份17点计划，要把AI塞进每一家商店、诊所和教室——这是美国不能忽视的信号。",
+        "original_context": "本期 The Generalist（作者 Mario）的开篇以「America Invents, China Applies」为题，指出本月早些时候中国发布了一份几乎完全被西方媒体忽视的AI政策文件——《商务部等9部门关于加快推进'人工智能+消费'行动的实施意见》(Implementation Opinions of the Ministry of Commerce and 8 Other Departments on Accelerating the Development of 'AI+Consumption')，作者称其标题「fabulously resistible」（标题令人望而生畏、提不起兴趣）。\n\n作者认为这份文件印证了两句老中国通常说的话：「America invents, China applies」（美国发明，中国应用）以及「China likes central planning」（中国偏爱中央计划）。文件开篇照例是「Guided by Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era」（在习近平新时代中国特色社会主义思想指导下）这样的套话，但作者提示，越过标题和这些套话之后，会发现「something serious is going on」（有些严肃的事情正在发生）。\n\n本期简报还预告了其他几个板块：Google的人才流失（brain drain）、卫星图像揭示的数据中心建设情况，以及一种需求激增的「obscure crystal」（小众晶体）。正文在此处以「Read more」结尾，后续内容需订阅解锁。",
+        "key_points": [
+          "中国本月发布了一份17点AI政策文件，标题为《商务部等9部门关于加快推进'人工智能+消费'行动的实施意见》。",
+          "该文件几乎完全未被西方媒体报道/关注（'almost entirely unnoticed by the Western press'）。",
+          "文件目标是把AI推广到「every shop, clinic, and classroom」（每一家商店、诊所和教室），覆盖零售、医疗、教育等消费场景。",
+          "作者引用了两句关于中美AI竞争的老话：'America invents, China applies' 和 'China likes central planning'，暗示这份文件正是这两种刻板印象的体现。",
+          "文件开篇是标准的意识形态表述——'Guided by Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era'，作者称标题本身'fabulously resistible'。",
+          "作者强调，抛开套话和标题后，文件内容'something serious is going on'，值得认真对待，暗示后续会有更深入的分析（但本次提供的正文未展开细节）。",
+          "本期简报还包含其他几条线索：Google的人才流失情况、通过卫星图像分析得出的数据中心建设进展、以及一种需求激增的稀有晶体材料，但具体内容未在提供文本中展开。",
+          "文章开篇引用哲学家兼数学家Alfred North Whitehead 1911年的话：'Civilization advances by extending the number of important operations which we can perform without thinking about them.'（文明的进步，在于我们能够不假思索完成的重要操作数量不断增加），暗示AI自动化融入日常的主题。"
+        ],
+        "notable_quotes": [
+          "\"Civilization advances by extending the number of important operations which we can perform without thinking about them.\" — Alfred North Whitehead, 1911（文明的进步在于我们能不假思索完成的重要操作越来越多）",
+          "\"America invents, China applies.\"（美国发明，中国应用）——常见的中国观察者说法",
+          "\"China likes central planning.\"（中国偏爱中央计划）",
+          "\"Guided by Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era\"——文件开篇的意识形态措辞",
+          "\"fabulously resistible\"——作者对文件标题的调侃式形容",
+          "\"something serious is going on\"——作者对文件实质内容的判断"
+        ],
+        "people_and_orgs": [
+          "Mario（The Generalist 作者/编辑）",
+          "Xi Jinping（习近平）",
+          "Ministry of Commerce（中国商务部）及其他8个部门",
+          "Alfred North Whitehead（数学家-哲学家，1911年引言来源）",
+          "Google（提及'brain drain'话题，具体内容未展开）",
+          "The Generalist（媒体/newsletter机构本身）"
+        ],
+        "topics": [
+          "中国AI政策",
+          "AI+消费",
+          "中央计划经济",
+          "中美AI竞争叙事",
+          "AI产业应用落地",
+          "科技媒体简报"
+        ],
+        "why_it_matters": [
+          "政府层面的顶层设计（17点计划）可能比单一模型能力更快地决定AI在真实经济场景（零售、医疗、教育）中的渗透速度，创业者和投资人应关注政策驱动型市场机会。",
+          "'America invents, China applies' 这一叙事框架提示，中国在AI应用层（而非底层模型研发）上的执行力和铺开速度可能是被西方低估的竞争维度。",
+          "若中国以中央计划方式系统性推动AI进入消费端每一个场景，相关供应链（如作者提及的'obscure crystal'及数据中心建设）可能出现结构性需求变化，值得供应链和硬件投资者留意。",
+          "文章将此视为'一个美国不能忽视'的信号，暗示这不仅是区域性新闻，而是可能影响全球AI竞争格局的政策事件。"
+        ],
+        "follow_up_questions": [
+          "这份17点《AI+消费》实施意见具体包含哪些执行细则和目标（如具体行业指标、时间表、资金规模）？",
+          "中国这种自上而下推动AI在零售/医疗/教育场景落地的方式，与西方市场驱动型AI应用扩散相比，实际效果和速度如何？",
+          "文中提到的Google'brain drain'具体指哪些人才流向、流向何处，规模如何？",
+          "卫星图像揭示的数据中心建设情况具体反映了哪些公司或地区的AI基础设施扩张趋势？",
+          "文中提到的'obscure crystal'具体是什么材料，为何需求激增，与AI硬件/算力的关系是什么？"
+        ]
+      },
+      "error": null,
+      "created_at": "2026-07-06T17:31:50.724Z",
+      "updated_at": "2026-07-07T00:01:47.670Z",
+      "kind": "article",
+      "provider": "anthropic",
+      "processed_at": "2026-07-06T23:54:37.337Z"
+    },
+    "all-in-ed4f70cdd75d669b": {
+      "id": "all-in-ed4f70cdd75d669b",
+      "source_id": "all-in",
+      "guid": "afd9c6d3-2254-4a38-9847-a304981d286d",
+      "title": "AI Sovereignty Wars, Palantir-Nvidia Deal, SCOTUS Birthright Ruling, Newsom's CA Budget Lie",
+      "link": "https://allinchamathjason.libsyn.com/ai-sovereignty-wars-palantir-nvidia-deal-scotus-birthright-ruling-newsoms-ca-budget-lie",
+      "audio_url": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/allinchamathjason/ALLIN-E279_Ch.mp3?dest-id=1928300",
+      "published_at": "2026-07-03T22:12:00.000Z",
+      "description": "(0:00) Bestie intros: Happy Fourth of July! (0:21) Palantir-Nvidia open source deal, Alex Karp's CNBC \"Crashout\" (33:52) Update on the AI jobs debate (50:24) Anthropic's Fable 5 available after export restrictions lifted (59:06) SCOTUS upholds birthright citizenship, striking Trump's EO (1:21:30) Ne",
+      "status": "discovered",
+      "quality_score": 100,
+      "score_reasons": [
+        "源优先级 92",
+        "命中高价值信号: anthropic",
+        "命中高价值信号: google",
+        "命中高价值信号: nvidia",
+        "命中高价值信号: ai",
+        "包含音频附件，可转写"
+      ],
+      "transcript": null,
+      "digest": null,
+      "error": null,
+      "created_at": "2026-07-06T17:31:39.847Z",
+      "updated_at": "2026-07-07T00:01:38.816Z"
+    },
+    "all-in-5701abdf10e13570": {
+      "id": "all-in-5701abdf10e13570",
+      "source_id": "all-in",
+      "guid": "a76ab591-7664-4c68-9059-580b160956b0",
+      "title": "Nate Silver Predicts: Democrats Take the House, Newsom Is Fading & AOC Might Win It All in 2028",
+      "link": "https://allinchamathjason.libsyn.com/nate-silver-predicts-democrats-take-the-house-newsom-is-fading-aoc-might-win-it-all-in-2028",
+      "audio_url": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/allinchamathjason/FINAL_PASS_NATE_SILVER.mp3?dest-id=1928300",
+      "published_at": "2026-06-29T15:47:00.000Z",
+      "description": "(0:00) Nate Silver joins the pod! (10:02) California's ballot counting problem: Raman's late-mail surge, ballot harvesting claims, and why the US counts slower than India (25:18) Democrats' three-way civil war: The left, the abundance libs, and Newsom's \"resistance lib\" base (34:48) The winning 2028",
+      "status": "discovered",
+      "quality_score": 100,
+      "score_reasons": [
+        "源优先级 92",
+        "命中高价值信号: interview",
+        "命中高价值信号: with ",
+        "命中高价值信号: ai",
+        "包含音频附件，可转写"
+      ],
+      "transcript": null,
+      "digest": null,
+      "error": null,
+      "created_at": "2026-07-06T17:31:39.847Z",
+      "updated_at": "2026-07-07T00:01:38.822Z"
+    }
+  }
+}

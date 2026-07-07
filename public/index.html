@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>硅谷 Info Radar</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%236ea8fe'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <h1>硅谷 Info Radar</h1>
+        <p>一手采访 · 播客 · 每日新鲜文稿</p>
+      </div>
+    </div>
+    <div id="stats" class="stats"></div>
+  </header>
+
+  <main class="layout">
+    <section class="list-pane">
+      <div class="list-header">
+        <h2>内容列表</h2>
+        <div class="filters">
+          <button class="filter active" data-filter="today">今日新增</button>
+          <button class="filter" data-filter="processed">已成稿</button>
+          <button class="filter" data-filter="all">全部</button>
+          <button class="filter" data-filter="discovered">待处理</button>
+        </div>
+      </div>
+      <ul id="episode-list" class="episode-list"></ul>
+    </section>
+
+    <section id="reader" class="reader-pane">
+      <div class="reader-empty">
+        <p>从左侧选择一条内容开始阅读。</p>
+        <p class="hint">运行 <code>npm run ingest</code> 后，这里会出现转写生成的中文摘要与要点。</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

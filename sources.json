@@ -1,0 +1,122 @@
+[
+  {
+    "id": "all-in",
+    "name": "All-In Podcast",
+    "type": "podcast",
+    "rssUrl": "https://allinchamathjason.libsyn.com/rss",
+    "language": "en",
+    "priority": 92,
+    "themes": ["venture capital", "startups", "markets", "AI", "policy"],
+    "why": "硅谷投资人和创业者视角强，适合追踪市场情绪与热门公司。"
+  },
+  {
+    "id": "acquired",
+    "name": "Acquired",
+    "type": "podcast",
+    "rssUrl": "https://feeds.transistor.fm/acquired",
+    "language": "en",
+    "priority": 90,
+    "themes": ["company history", "strategy", "technology", "markets"],
+    "why": "长访谈和公司深度拆解质量高，适合沉淀长期认知。"
+  },
+  {
+    "id": "dwarkesh",
+    "name": "Dwarkesh Podcast",
+    "type": "podcast",
+    "rssUrl": "https://api.substack.com/feed/podcast/69345.rss",
+    "language": "en",
+    "priority": 95,
+    "themes": ["AI", "research", "scaling", "economics", "philosophy"],
+    "why": "AI 研究者、创业者、政策人物的一手长访谈，信息密度高。"
+  },
+  {
+    "id": "no-priors",
+    "name": "No Priors",
+    "type": "podcast",
+    "rssUrl": "https://feeds.megaphone.fm/nopriors",
+    "language": "en",
+    "priority": 88,
+    "themes": ["AI", "startups", "research", "infrastructure"],
+    "why": "AI 创业和研究生态的一线访谈，适合跟踪新公司与新方向。"
+  },
+  {
+    "id": "latent-space",
+    "name": "Latent Space",
+    "type": "podcast",
+    "rssUrl": "https://api.substack.com/feed/podcast/1084089.rss",
+    "language": "en",
+    "priority": 88,
+    "themes": ["AI engineering", "LLM", "developer tools", "agents"],
+    "why": "偏工程和开发者生态，能捕捉 AI 工具链的原始讨论。"
+  },
+  {
+    "id": "a16z-podcast",
+    "name": "a16z Podcast",
+    "type": "podcast",
+    "rssUrl": "https://feeds.simplecast.com/JGE3yC0V",
+    "language": "en",
+    "priority": 80,
+    "themes": ["venture capital", "technology", "startups", "policy"],
+    "why": "VC 平台型内容，覆盖新技术和创业趋势。"
+  },
+  {
+    "id": "ycombinator",
+    "name": "Y Combinator",
+    "type": "podcast",
+    "rssUrl": "https://feeds.simplecast.com/54nAGcIl",
+    "language": "en",
+    "priority": 78,
+    "themes": ["startups", "founders", "YC", "product"],
+    "why": "创业一线经验和 YC 生态内容，适合发现早期趋势。"
+  },
+  {
+    "id": "lenny",
+    "name": "Lenny's Podcast",
+    "type": "podcast",
+    "rssUrl": "https://api.substack.com/feed/podcast/10845.rss",
+    "language": "en",
+    "priority": 82,
+    "themes": ["product", "growth", "startups", "operators"],
+    "why": "产品、增长和创业操盘手访谈，适合提取实践经验。"
+  },
+  {
+    "id": "invest-like-best",
+    "name": "Invest Like the Best",
+    "type": "podcast",
+    "rssUrl": "https://feeds.megaphone.fm/investlikethebest",
+    "language": "en",
+    "priority": 78,
+    "themes": ["investing", "business", "founders", "strategy"],
+    "why": "投资和企业家访谈质量稳定，可作为跨领域高质量来源。"
+  },
+  {
+    "id": "the-generalist",
+    "name": "The Generalist",
+    "type": "newsletter",
+    "rssUrl": "https://www.generalist.com/feed",
+    "language": "en",
+    "priority": 76,
+    "themes": ["startups", "strategy", "markets", "technology"],
+    "why": "发现型平台，常整理高质量公司和趋势研究，可反向发现采访对象。"
+  },
+  {
+    "id": "stratechery",
+    "name": "Stratechery",
+    "type": "analysis-feed",
+    "rssUrl": "https://stratechery.com/feed/",
+    "language": "en",
+    "priority": 74,
+    "themes": ["strategy", "technology", "platforms", "business models"],
+    "why": "技术商业分析质量高，用于辅助筛选值得追踪的话题。"
+  },
+  {
+    "id": "ycombinator-blog",
+    "name": "Y Combinator Blog",
+    "type": "discovery-feed",
+    "rssUrl": "https://www.ycombinator.com/blog/rss",
+    "language": "en",
+    "priority": 70,
+    "themes": ["startups", "YC", "founders", "AI"],
+    "why": "作为发现新公司、新创始人访谈和创业观点的补充来源。"
+  }
+]

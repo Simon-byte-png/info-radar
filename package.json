@@ -1,0 +1,21 @@
+{
+  "name": "silicon-valley-info-radar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "RSS-based Silicon Valley interview and podcast intelligence digest system.",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "ingest": "node src/ingest.js --limit=3",
+    "ingest:dry": "node src/ingest.js --dry-run --limit=5",
+    "check": "node src/healthcheck.js"
+  },
+  "dependencies": {
+    "openai": "^4.86.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "feedparser": "^2.2.10",
+    "sanitize-html": "^2.14.0"
+  }
+}

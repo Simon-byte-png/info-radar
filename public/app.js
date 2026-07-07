@@ -1,0 +1,205 @@
+const listEl = document.getElementById('episode-list');
+const readerEl = document.getElementById('reader');
+const statsEl = document.getElementById('stats');
+const filterButtons = document.querySelectorAll('.filter');
+
+let allEpisodes = [];
+let currentFilter = 'today';
+let selectedId = null;
+let todayCount = 0;
+
+init();
+
+async function init() {
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderList();
+    });
+  });
+  await loadEpisodes();
+}
+
+async function loadEpisodes() {
+  try {
+    const res = await fetch('api/episodes');
+    const data = await res.json();
+    allEpisodes = data.episodes || [];
+    todayCount = data.today_count || 0;
+    renderStats(data.stats || []);
+    renderList();
+  } catch (err) {
+    listEl.innerHTML = `<li class="pending-box">加载失败：${escapeHtml(err.message)}</li>`;
+  }
+}
+
+function isToday(iso) {
+  if (!iso) return false;
+  const now = new Date();
+  const d = new Date(iso);
+  return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate();
+}
+
+function renderStats(stats) {
+  const map = Object.fromEntries(stats.map((s) => [s.status, s.count]));
+  const total = stats.reduce((sum, s) => sum + s.count, 0);
+  statsEl.innerHTML = `
+    <span class="stat-chip today">今日 <b>${todayCount}</b></span>
+    <span class="stat-chip">已成稿 <b>${map.processed || 0}</b></span>
+    <span class="stat-chip">待处理 <b>${map.discovered || 0}</b></span>
+    <span class="stat-chip">共 <b>${total}</b></span>
+  `;
+}
+
+function renderList() {
+  let items;
+  if (currentFilter === 'today') {
+    items = allEpisodes.filter((e) => e.status === 'processed' && isToday(e.processed_at));
+  } else if (currentFilter === 'all') {
+    items = allEpisodes;
+  } else {
+    items = allEpisodes.filter((e) => e.status === currentFilter);
+  }
+
+  const banner = currentFilter === 'today'
+    ? `<li class="today-banner">📮 今日为你推送 <b>${items.length}</b> 篇新文稿</li>`
+    : '';
+
+  if (items.length === 0) {
+    const empty = currentFilter === 'today'
+      ? '今天还没有新文稿。运行 <code>npm run ingest</code> 采集，或等待每日自动采集。'
+      : '暂无内容。运行 <code>npm run ingest</code> 抓取并生成文稿。';
+    listEl.innerHTML = banner + `<li class="pending-box">${empty}</li>`;
+    return;
+  }
+
+  listEl.innerHTML = banner + items.map((e) => `
+    <li class="episode-card ${e.id === selectedId ? 'selected' : ''}" data-id="${e.id}">
+      <div class="card-meta">
+        <span class="source-tag">${escapeHtml(e.source_name)}</span>
+        <span class="date">${formatDate(e.published_at)}</span>
+      </div>
+      <p class="card-title">${escapeHtml(e.digest_title || e.title)}</p>
+      ${e.one_sentence ? `<p class="card-sentence">${escapeHtml(e.one_sentence)}</p>` : ''}
+      <div class="card-meta" style="margin-top:8px;">
+        <span class="badge ${e.status}">${statusLabel(e.status)}</span>
+        ${e.kind ? `<span class="kind-tag">${e.kind === 'article' ? '文章' : '播客'}</span>` : ''}
+        <span class="score">质量分 ${e.quality_score}</span>
+      </div>
+    </li>
+  `).join('');
+
+  listEl.querySelectorAll('.episode-card').forEach((card) => {
+    card.addEventListener('click', () => openEpisode(card.dataset.id));
+  });
+}
+
+async function openEpisode(id) {
+  selectedId = id;
+  renderList();
+  readerEl.innerHTML = `<div class="reader-empty"><p>加载中…</p></div>`;
+  try {
+    const res = await fetch(`api/episodes/${id}`);
+    const e = await res.json();
+    renderReader(e);
+  } catch (err) {
+    readerEl.innerHTML = `<div class="reader-empty"><p>加载失败：${escapeHtml(err.message)}</p></div>`;
+  }
+}
+
+function renderReader(e) {
+  const d = e.digest;
+
+  if (!d) {
+    readerEl.innerHTML = `
+      <article class="article">
+        <h1>${escapeHtml(e.title)}</h1>
+        <div class="article-meta">
+          <span>${escapeHtml(e.source_name)}</span>
+          <span>${formatDate(e.published_at)}</span>
+          <span class="badge ${e.status}">${statusLabel(e.status)}</span>
+          ${e.link ? `<a href="${e.link}" target="_blank" rel="noopener">原始链接 ↗</a>` : ''}
+        </div>
+        <div class="pending-box">
+          ${e.status === 'error'
+            ? `处理出错：${escapeHtml(e.error || '未知错误')}`
+            : '这条内容尚未生成文稿。运行 <code>npm run ingest</code> 后会自动转写并生成中文摘要。'}
+          ${e.description ? `<p style="margin-top:14px;color:var(--muted)">${escapeHtml(e.description.slice(0, 600))}…</p>` : ''}
+        </div>
+      </article>`;
+    return;
+  }
+
+  readerEl.innerHTML = `
+    <article class="article">
+      <h1>${escapeHtml(d.title_cn || e.title)}</h1>
+      ${d.one_sentence ? `<p class="subtitle">${escapeHtml(d.one_sentence)}</p>` : ''}
+      <div class="article-meta">
+        <span>${escapeHtml(e.source_name)}</span>
+        <span>${formatDate(e.published_at)}</span>
+        <span class="score">质量分 ${e.quality_score}</span>
+        ${e.link ? `<a href="${e.link}" target="_blank" rel="noopener">原始链接 ↗</a>` : ''}
+      </div>
+
+      ${section('语境', d.original_context ? paragraphs(d.original_context) : '')}
+      ${listSection('要点', d.key_points, (p) => `<li>${escapeHtml(p)}</li>`, 'points')}
+      ${quotesSection(d.notable_quotes)}
+      ${listSection('为什么重要', d.why_it_matters, (p) => `<li>${escapeHtml(p)}</li>`, 'points')}
+      ${chipsSection('人物 / 机构', d.people_and_orgs)}
+      ${chipsSection('主题', d.topics)}
+      ${listSection('值得追踪', d.follow_up_questions, (p) => `<li>${escapeHtml(p)}</li>`, 'points')}
+    </article>`;
+}
+
+function section(title, html) {
+  if (!html) return '';
+  return `<div class="section"><h3>${title}</h3>${html}</div>`;
+}
+
+function paragraphs(text) {
+  const parts = Array.isArray(text) ? text : String(text).split(/\n{2,}/);
+  return parts.map((p) => `<p>${escapeHtml(p)}</p>`).join('');
+}
+
+function listSection(title, items, render, cls) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<div class="section"><h3>${title}</h3><ul class="${cls}">${items.map(render).join('')}</ul></div>`;
+}
+
+function quotesSection(quotes) {
+  if (!Array.isArray(quotes) || quotes.length === 0) return '';
+  const html = quotes.map((q) => {
+    if (typeof q === 'string') return `<blockquote class="quote"><div class="en">${escapeHtml(q)}</div></blockquote>`;
+    return `<blockquote class="quote">
+      <div class="en">${escapeHtml(q.quote || q.en || q.text || '')}</div>
+      ${q.note || q.cn ? `<div class="cn">${escapeHtml(q.note || q.cn)}</div>` : ''}
+    </blockquote>`;
+  }).join('');
+  return `<div class="section"><h3>原句摘录</h3>${html}</div>`;
+}
+
+function chipsSection(title, items) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<div class="section"><h3>${title}</h3><div class="chips">${items.map((i) => `<span class="chip">${escapeHtml(i)}</span>`).join('')}</div></div>`;
+}
+
+function statusLabel(status) {
+  return { processed: '已成稿', discovered: '待处理', error: '出错' }[status] || status;
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function escapeHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
