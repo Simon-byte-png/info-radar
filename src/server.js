@@ -43,6 +43,7 @@ function toCard(e) {
     kind: e.kind || null,
     quality_score: e.quality_score,
     link: e.link,
+    audio_url: e.audio_url || null,
     digest_title: e.digest?.title_cn || null,
     one_sentence: e.digest?.one_sentence || null,
     topics: e.digest?.topics || [],

@@ -181,6 +181,84 @@
         "AI"
       ],
       "why": "作为发现新公司、新创始人访谈和创业观点的补充来源。"
+    },
+    "lex-fridman": {
+      "id": "lex-fridman",
+      "name": "Lex Fridman Podcast",
+      "type": "podcast",
+      "rss_url": "https://lexfridman.com/feed/podcast/",
+      "language": "en",
+      "priority": 84,
+      "themes": [
+        "AI",
+        "science",
+        "technology",
+        "founders",
+        "long-form"
+      ],
+      "why": "超长深度对话，覆盖 AI、科学与科技领袖，适合一手观点沉淀。"
+    },
+    "cognitive-revolution": {
+      "id": "cognitive-revolution",
+      "name": "The Cognitive Revolution",
+      "type": "podcast",
+      "rss_url": "https://feeds.megaphone.fm/RINTP3108857801",
+      "language": "en",
+      "priority": 88,
+      "themes": [
+        "AI",
+        "builders",
+        "research",
+        "agents",
+        "startups"
+      ],
+      "why": "专访 AI 一线构建者与研究者，信息密度高、非常贴合追踪前沿。"
+    },
+    "unsupervised-learning": {
+      "id": "unsupervised-learning",
+      "name": "Unsupervised Learning (Redpoint)",
+      "type": "podcast",
+      "rss_url": "https://feeds.simplecast.com/dOSE_bdP",
+      "language": "en",
+      "priority": 84,
+      "themes": [
+        "AI",
+        "startups",
+        "venture capital",
+        "research"
+      ],
+      "why": "Redpoint 的 AI 播客，聚焦 AI 创业与研究一线人物。"
+    },
+    "sequoia-training-data": {
+      "id": "sequoia-training-data",
+      "name": "Training Data (Sequoia)",
+      "type": "podcast",
+      "rss_url": "https://feeds.megaphone.fm/trainingdata",
+      "language": "en",
+      "priority": 84,
+      "themes": [
+        "AI",
+        "founders",
+        "research",
+        "venture capital"
+      ],
+      "why": "红杉出品，深聊 AI 创始人与研究者，适合发现新公司与新方向。"
+    },
+    "bg2-pod": {
+      "id": "bg2-pod",
+      "name": "BG2 Pod",
+      "type": "podcast",
+      "rss_url": "https://anchor.fm/s/f06c2370/podcast/rss",
+      "language": "en",
+      "priority": 86,
+      "themes": [
+        "markets",
+        "investing",
+        "technology",
+        "AI",
+        "capitalism"
+      ],
+      "why": "Brad Gerstner 与 Bill Gurley 聊科技、市场与投资，视角硬核。"
     }
   },
   "episodes": {
@@ -252,7 +330,7 @@
       },
       "error": null,
       "created_at": "2026-07-06T17:31:50.717Z",
-      "updated_at": "2026-07-10T03:02:55.735Z",
+      "updated_at": "2026-07-10T03:24:45.620Z",
       "kind": "article",
       "provider": "anthropic",
       "processed_at": "2026-07-06T23:59:57.496Z",
@@ -332,7 +410,7 @@
       },
       "error": null,
       "created_at": "2026-07-06T17:31:50.724Z",
-      "updated_at": "2026-07-07T00:01:47.670Z",
+      "updated_at": "2026-07-10T03:24:45.627Z",
       "kind": "article",
       "provider": "anthropic",
       "processed_at": "2026-07-06T23:54:37.337Z"
@@ -360,7 +438,7 @@
       "digest": null,
       "error": null,
       "created_at": "2026-07-06T17:31:39.847Z",
-      "updated_at": "2026-07-07T00:01:38.816Z"
+      "updated_at": "2026-07-10T03:24:02.324Z"
     },
     "all-in-5701abdf10e13570": {
       "id": "all-in-5701abdf10e13570",
@@ -384,7 +462,7 @@
       "digest": null,
       "error": null,
       "created_at": "2026-07-06T17:31:39.847Z",
-      "updated_at": "2026-07-07T00:01:38.822Z"
+      "updated_at": "2026-07-10T03:24:02.325Z"
     }
   }
 }

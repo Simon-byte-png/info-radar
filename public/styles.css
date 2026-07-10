@@ -75,6 +75,20 @@ body {
   color: var(--muted);
 }
 
+.src-link {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(110,168,254,0.3);
+  border-radius: 999px;
+  padding: 2px 9px;
+  white-space: nowrap;
+}
+.src-link:hover { background: var(--accent-soft); }
+.src-link.big { font-size: 12.5px; padding: 5px 12px; }
+.src-link.audio { color: var(--good); border-color: rgba(74,222,128,0.35); }
+.src-link.audio:hover { background: rgba(74,222,128,0.1); }
+
 .layout {
   display: grid;
   grid-template-columns: 380px 1fr;

@@ -132,6 +132,7 @@ function renderList() {
         <span class="badge ${e.status}">${statusLabel(e.status)}</span>
         ${e.kind ? `<span class="kind-tag">${e.kind === 'article' ? '文章' : '播客'}</span>` : ''}
         <span class="score">质量分 ${e.quality_score}</span>
+        ${sourceLinks(e)}
       </div>
     </li>
   `).join('');
@@ -215,7 +216,7 @@ function renderReader(e) {
           <span>${escapeHtml(e.source_name)}</span>
           <span>${formatDate(e.published_at)}</span>
           <span class="badge ${e.status}">${statusLabel(e.status)}</span>
-          ${e.link ? `<a href="${e.link}" target="_blank" rel="noopener">原始链接 ↗</a>` : ''}
+          ${sourceLinks(e, { big: true })}
         </div>
         <div class="pending-box">
           ${e.status === 'error'
@@ -237,7 +238,7 @@ function renderReader(e) {
         <span>${escapeHtml(e.source_name)}</span>
         <span>${formatDate(e.published_at)}</span>
         <span class="score">质量分 ${e.quality_score}</span>
-        ${e.link ? `<a href="${e.link}" target="_blank" rel="noopener">原始链接 ↗</a>` : ''}
+        ${sourceLinks(e, { big: true })}
       </div>
 
       ${section('语境', d.original_context ? paragraphs(d.original_context) : '')}
@@ -296,6 +297,38 @@ function chipsSection(title, items) {
 
 function statusLabel(status) {
   return { processed: '已成稿', discovered: '待处理', error: '出错' }[status] || status;
+}
+
+// 判断原始链接的类型，给出对应图标与文案（原视频 / 播客 / 原文）。
+function linkMeta(e) {
+  const url = e.link || '';
+  const isVideo = /youtube\.com|youtu\.be|vimeo\.com/i.test(url);
+  if (isVideo) return { icon: '▶', label: '原视频' };
+  if (e.kind === 'transcript' || e.audio_url) return { icon: '🎧', label: '原节目' };
+  return { icon: '📄', label: '原文' };
+}
+
+function safeUrl(url) {
+  try {
+    const u = new URL(url, window.location.href);
+    return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : null;
+  } catch {
+    return null;
+  }
+}
+
+function sourceLinks(e, { big = false } = {}) {
+  const parts = [];
+  const link = safeUrl(e.link);
+  if (link) {
+    const m = linkMeta(e);
+    parts.push(`<a class="src-link${big ? ' big' : ''}" href="${escapeHtml(link)}" target="_blank" rel="noopener">${m.icon} ${m.label} ↗</a>`);
+  }
+  const audio = big ? safeUrl(e.audio_url) : null;
+  if (audio) {
+    parts.push(`<a class="src-link big audio" href="${escapeHtml(audio)}" target="_blank" rel="noopener">▶ 收听音频</a>`);
+  }
+  return parts.join('');
 }
 
 function formatDate(iso) {
