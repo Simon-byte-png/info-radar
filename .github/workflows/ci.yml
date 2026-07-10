@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Syntax check all source files
+        run: node --check src/*.js
+      - name: Validate sources.json
+        run: node -e "JSON.parse(require('fs').readFileSync('sources.json','utf8')); console.log('sources.json OK')"

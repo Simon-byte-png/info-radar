@@ -96,6 +96,18 @@ export function markEpisodeError(id, error) {
   persist();
 }
 
+// 设置阅读状态标记（已读 / 收藏），供每日阅读器使用。
+export function setEpisodeFlag(id, { read, starred } = {}) {
+  initDb();
+  const ep = state.episodes[id];
+  if (!ep) return null;
+  if (typeof read === 'boolean') ep.read = read;
+  if (typeof starred === 'boolean') ep.starred = starred;
+  ep.updated_at = new Date().toISOString();
+  persist();
+  return withSource(ep);
+}
+
 function withSource(ep) {
   const source = state.sources[ep.source_id] || {};
   return {

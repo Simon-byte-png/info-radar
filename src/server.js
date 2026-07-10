@@ -2,7 +2,7 @@ import 'dotenv/config';
 import path from 'node:path';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
-import { initDb, listEpisodes, getEpisode, stats, getTodayDigest } from './db.js';
+import { initDb, listEpisodes, getEpisode, stats, getTodayDigest, setEpisodeFlag } from './db.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -13,6 +13,7 @@ const app = express();
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || process.env.ZAOCODE_PREVIEW_PORT || 3000;
 
+app.use(express.json());
 app.use(express.static(path.join(rootDir, 'public')));
 
 app.get('/health', (_req, res) => {
@@ -44,7 +45,9 @@ function toCard(e) {
     link: e.link,
     digest_title: e.digest?.title_cn || null,
     one_sentence: e.digest?.one_sentence || null,
-    topics: e.digest?.topics || []
+    topics: e.digest?.topics || [],
+    read: Boolean(e.read),
+    starred: Boolean(e.starred)
   };
 }
 
@@ -66,8 +69,18 @@ app.get('/api/episodes/:id', (req, res) => {
     audio_url: episode.audio_url,
     description: episode.description,
     digest: episode.digest,
-    error: episode.error
+    error: episode.error,
+    read: Boolean(episode.read),
+    starred: Boolean(episode.starred)
   });
+});
+
+// 更新阅读状态：{ read?: boolean, starred?: boolean }
+app.post('/api/episodes/:id/state', (req, res) => {
+  const { read, starred } = req.body || {};
+  const updated = setEpisodeFlag(req.params.id, { read, starred });
+  if (!updated) return res.status(404).json({ error: 'not found' });
+  res.json({ id: updated.id, read: Boolean(updated.read), starred: Boolean(updated.starred) });
 });
 
 app.listen(PORT, HOST, () => {

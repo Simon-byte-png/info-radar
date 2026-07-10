@@ -95,7 +95,7 @@ body {
   z-index: 2;
 }
 .list-header h2 { margin: 0 0 12px; font-size: 15px; color: var(--muted); font-weight: 600; }
-.filters { display: flex; gap: 8px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
 .filter {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -106,6 +106,67 @@ body {
   cursor: pointer;
 }
 .filter.active { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+
+.tools { display: flex; gap: 8px; margin-top: 10px; }
+.search {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 7px 12px;
+  font-size: 13px;
+  outline: none;
+}
+.search:focus { border-color: var(--accent); }
+.search::placeholder { color: var(--muted); }
+.source-filter {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 7px 10px;
+  font-size: 12px;
+  max-width: 130px;
+  outline: none;
+}
+.source-filter:focus { border-color: var(--accent); }
+
+.star-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 4px;
+  line-height: 1;
+}
+.star-btn.on { color: var(--warn); }
+.star-btn:hover { color: var(--warn); }
+
+.unread-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.episode-card.read .card-title { color: var(--muted); }
+.episode-card.read { opacity: 0.82; }
+
+.reader-topbar { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+.reader-star {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.reader-star.on { color: var(--warn); border-color: rgba(251,191,36,0.5); background: rgba(251,191,36,0.1); }
+.reader-star:hover { border-color: var(--warn); }
 
 .episode-list { list-style: none; margin: 0; padding: 8px 12px 40px; }
 .episode-card {

@@ -118,5 +118,6 @@ docker run -d -p 3000:3000 --env-file .env -v $(pwd)/data:/app/data info-radar
 |------|------|
 | `GET /api/today` | 当天成稿列表（每日推送用） |
 | `GET /api/episodes` | 全部内容卡片 + 统计 + today_count |
-| `GET /api/episodes/:id` | 单篇完整摘要 |
+| `GET /api/episodes/:id` | 单篇完整摘要（含 read/starred） |
+| `POST /api/episodes/:id/state` | 更新已读/收藏，body `{read?:bool, starred?:bool}` |
 | `GET /health` | 健康检查 |

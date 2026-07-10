@@ -252,10 +252,12 @@
       },
       "error": null,
       "created_at": "2026-07-06T17:31:50.717Z",
-      "updated_at": "2026-07-07T00:01:47.663Z",
+      "updated_at": "2026-07-10T03:02:55.735Z",
       "kind": "article",
       "provider": "anthropic",
-      "processed_at": "2026-07-06T23:59:57.496Z"
+      "processed_at": "2026-07-06T23:59:57.496Z",
+      "read": false,
+      "starred": false
     },
     "the-generalist-1bcbe3f43ce0a92e": {
       "id": "the-generalist-1bcbe3f43ce0a92e",

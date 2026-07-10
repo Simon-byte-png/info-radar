@@ -82,3 +82,21 @@ npm run dev               # 打开阅读界面 http://localhost:3000
 - **改前端** → `public/`，无构建，直接刷新
 
 上线流程见 `DEPLOY.md`。
+
+## HTTP 接口
+
+| 接口 | 说明 |
+|------|------|
+| `GET /api/today` | 当天成稿列表（每日推送用） |
+| `GET /api/episodes` | 全部内容卡片 + stats + today_count |
+| `GET /api/episodes/:id` | 单篇完整摘要（含 read/starred） |
+| `POST /api/episodes/:id/state` | 更新阅读状态，body `{read?:bool, starred?:bool}` |
+| `GET /health` | 健康检查 |
+
+## 阅读器功能（前端）
+
+- 标签页：今日新增 / 未读 / 收藏 / 已成稿 / 全部 / 待处理
+- 搜索框：跨标题/摘要/话题/来源检索；来源下拉筛选
+- 打开文稿自动标记已读；卡片和阅读器可星标收藏（`POST .../state` 持久化到 store.json）
+- 键盘 `j` / `k` 上下浏览
+

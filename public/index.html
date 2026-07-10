@@ -25,9 +25,15 @@
         <h2>内容列表</h2>
         <div class="filters">
           <button class="filter active" data-filter="today">今日新增</button>
+          <button class="filter" data-filter="unread">未读</button>
+          <button class="filter" data-filter="starred">收藏</button>
           <button class="filter" data-filter="processed">已成稿</button>
           <button class="filter" data-filter="all">全部</button>
           <button class="filter" data-filter="discovered">待处理</button>
+        </div>
+        <div class="tools">
+          <input id="search" class="search" type="search" placeholder="搜索标题 / 摘要 / 话题…" />
+          <select id="source-filter" class="source-filter"><option value="">全部来源</option></select>
         </div>
       </div>
       <ul id="episode-list" class="episode-list"></ul>
@@ -36,7 +42,7 @@
     <section id="reader" class="reader-pane">
       <div class="reader-empty">
         <p>从左侧选择一条内容开始阅读。</p>
-        <p class="hint">运行 <code>npm run ingest</code> 后，这里会出现转写生成的中文摘要与要点。</p>
+        <p class="hint">按 <code>j</code> / <code>k</code> 可上下浏览；运行 <code>npm run ingest</code> 后这里会出现中文摘要与要点。</p>
       </div>
     </section>
   </main>
